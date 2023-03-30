@@ -1,0 +1,45 @@
+{
+  "name": "Push-up Lat Row",
+  "alias": [],
+  "target": {
+    "Chest": "strength",
+    "Back": "strength",
+    "Deltoids": "strength",
+    "Triceps": "strength",
+    "Biceps": "strength"
+  },
+  "steps": [
+	"Start in a plank position with your hands directly under your shoulders, and your feet hip-width apart.",
+	"Perform a push-up by bending your elbows and lowering your chest towards the ground.",
+	"Push back up to the starting position.",
+	"Lift your right hand off the ground and pull your elbow up towards your ribs, bringing your hand towards your shoulder.",
+	"Lower your right hand back to the ground and perform another push-up.",
+	"Lift your left hand off the ground and pull your elbow up towards your ribs, bringing your hand towards your shoulder.",
+	"Lower your left hand back to the ground and perform another push-up.",
+	"Repeat the exercise for 2-3 sets of 10-12 repetitions."
+  ],
+  "stages": [],
+  "purpose": ["strength"],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Keep your core muscles engaged throughout the exercise to maintain stability.",
+	"Keep your elbows close to your body during the push-up and row portions of the exercise.",
+	"Keep your neck in a neutral position and your gaze focused on the ground to avoid strain.",
+	"Use a lighter weight or no weight to start with and gradually increase weight as you get stronger.",
+	"Breathe deeply and steadily throughout the exercise.",
+	"Remember to alternate sides and maintain proper form throughout the exercise."
+  ],
+  "variations": ["push-up"]
+}

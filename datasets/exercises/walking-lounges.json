@@ -1,0 +1,41 @@
+{
+  "name": "Walking Lounges",
+  "alias": [],
+  "target": {
+    "Glutes": "strength",
+    "Hamstrings": "strength",
+    "Quadriceps": "strength",
+    "Calves": "activation",
+    "Core": "stabilization"
+  },
+  "steps": [
+    "Start by standing up straight with your feet shoulder-width apart.",
+    "Take a step forward with your right foot, and lower your body by bending your knees until your right thigh is parallel to the ground.",
+    "Keep your back straight, your chest up, and your core engaged.",
+    "Push off your right foot and bring your left foot forward to meet your right foot.",
+    "Repeat the lunge by taking a step forward with your left foot, and bending your knees until your left thigh is parallel to the ground.",
+    "Keep alternating between your right and left legs, taking a step forward and lunging until you have completed the desired number of reps.",
+    "Make sure to keep your knee over your ankle, not over your toe, and avoid letting your knee go inward.",
+    "Remember to breathe in as you step forward and lunge, and breathe out as you push off your front foot."
+  ],
+  "stages": [],
+  "purpose": ["stability", "endurance", "muscle tone"],
+  "recommendations": {
+    "time_by_round": 0,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 12,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+     "To make the exercise more challenging, you can hold weights in your hands or perform the lunges on an incline.",
+     "You can also mix it up by adding a twist to your torso or raising your arms over your head while lunging."
+  ],
+  "variations": []
+}

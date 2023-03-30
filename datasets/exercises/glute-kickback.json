@@ -1,0 +1,41 @@
+{
+  "name": "Glute Kickback",
+  "alias": ["quadruped hip extension"],
+  "target": {
+    "Glutes": "strength",
+    "Hamstrings": "activation",
+    "Erector Spinae": "stabilization",
+    "Core": "stabilization",
+    "Shoulders and Scapula": "stabilization"
+  },
+  "steps": [
+	"Start on all fours with your hands shoulder-width apart and your knees hip-width apart.",
+	"Keep your hands firmly planted on the ground and your neck in a neutral position.",
+	"Engage your core muscles and keep your back straight.",
+	"Raise one leg up behind you, keeping your knee bent at a 90-degree angle.",
+	"Flex your foot and squeeze your glutes to lift your heel toward the ceiling.",
+	"Pause for a moment at the top of the movement, then lower your leg back down to the starting position."
+  ],
+  "stages": [],
+  "purpose": ["strength", "prenatal"],
+  "recommendations": {
+    "time_by_round": 30,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Keep your hips level and avoid rotating them to one side or the other.",
+	"Keep your abs engaged and avoid arching your lower back.",
+	"Use a slow and controlled motion throughout the movement.",
+	"Use a light ankle weight or no weight at all until you feel comfortable with the movement."
+  ],
+  "variations": ["kickback"]
+}

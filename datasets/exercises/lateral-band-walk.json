@@ -1,0 +1,41 @@
+{
+  "name": "Lateral Band Walk",
+  "alias": [],
+  "target": {
+    "Gluteus Medius": "strength",
+    "Hip abductors": "strength",
+    "Quadriceps": "stabilization",
+    "Hamstrings": "stabilization",
+    "Transverse Abdominis": "stabilization"
+  },
+  "steps": [
+	"Put a resistance band around your legs just above your knees. Stand with your feet shoulder-width apart and your toes pointing straight ahead. Keep your back straight and your core engaged throughout the exercise.",
+	"Take a small step to the side with your right foot, then follow with your left foot, keeping the band taut.",
+	"Take another small step to the side with your right foot, then follow with your left foot. Repeat this pattern for the desired number of repetitions.",
+	"To make the exercise more challenging, you can increase the tension in the band or take larger steps.",
+	"Be sure to keep your knees pointing straight ahead and avoid letting them collapse inward."
+  ],
+  "stages": [],
+  "purpose": ["stability", "balance", "prenatal", "strength"],
+  "recommendations": {
+    "time_by_round": 30,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 12,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Don't let your knees cave inwards, keep them pointing in line with your toes.",
+	"Keep your weight on your heels and your toes lifted to prevent your knees from going past your toes.",
+	"Keep your back straight and avoid rounding your lower back.",
+	"Use a light ball or no ball at all until you feel comfortable with the movement.",
+	"Gradually increase the weight of the ball as you become more confident and stronger."
+  ],
+  "variations": ["squats"]
+}

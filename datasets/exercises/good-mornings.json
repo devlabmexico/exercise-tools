@@ -1,0 +1,45 @@
+{
+  "name": "Good Mornings",
+  "alias": [],
+  "target": {
+    "Erector Spinae": "strength",
+    "Glutes": "strength",
+    "Hamstrings": "strength",
+    "Core": "stabilization"
+  },
+  "steps": [
+    "Stand with your feet shoulder-width apart and your toes pointing forward.", 
+    "Place your hands behind your head or across your chest.", 
+    "Engage your core muscles and keep your back straight.", 
+    "Slowly bend forward from your hips, pushing your glutes back as if you are trying to touch the wall behind you with your hips.", 
+    "Keep your knees slightly bent and your weight on your heels.", "Lower your torso until you feel a stretch in your hamstrings.", 
+    "Pause for a moment, then slowly return to the starting position by contracting your glutes and hamstrings."
+  ],
+  "stages": [],
+  "purpose": ["strength", "prenatal"],
+  "recommendations": {
+    "time_by_round": 90,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {},
+    "prenatal": [
+      "Although they are safe to perform while pregnant, you may want to opt for adding a lighter weight, or no weight at all!.",
+      "As the baby grows, and therefore your bump, you'll need to take a slightly wider stance to allow for added space."
+    ]
+  },
+  "comments": [
+    "Don't round your lower back, as this can lead to injury.",
+    "Keep your neck in a neutral position and avoid looking up or down.",
+    "Use a light weight or no weight at all until you feel comfortable with the movement.",
+    "Gradually increase the weight as you become more confident and stronger.",
+    "If you experience any pain or discomfort, stop the exercise and consult a fitness professional."
+  ],
+  "variations": []
+}

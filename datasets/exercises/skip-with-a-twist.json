@@ -1,0 +1,44 @@
+{
+  "name": "Skip with a Twist",
+  "alias": [],
+  "target": {
+    "Abdominals": "strength",
+    "Obliques": "strength",
+    "Hip flexors": "activation",
+    "Calves": "activation",
+    "Hamstrings": "activation",
+    "Quadriceps": "activation"
+  },
+  "steps": [
+	"Stand with your feet hip-width apart and your arms at your sides.",
+	"Start skipping by lifting your right knee up towards your chest and hopping on your left foot.",
+	"As you land on your left foot, twist your torso to the right and bring your right elbow across your body to tap your left knee.",
+	"Repeat on the other side by hopping on your right foot and twisting your torso to the left to tap your right knee with your left elbow.",
+	"Continue to alternate sides, hopping on one foot and twisting your torso to tap the opposite knee."
+  ],
+  "stages": [],
+  "purpose": ["strength", "cardio"],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Start with a slower pace and gradually increase speed as you become more comfortable with the movement.",
+	"Keep your core engaged throughout the exercise to maintain balance.",
+	"Land lightly on the foot that is on the ground to reduce impact and prevent injury.",
+	"Keep your arms relaxed and swing them naturally with the movement.",
+	"Keep your gaze forward and avoid looking down at your feet.",
+	"Breathe deeply and rhythmically throughout the exercise.",
+	"If you have any knee or hip issues, be sure to modify the exercise or consult a doctor before attempting."
+  ],
+  "variations": ["push-up"]
+}

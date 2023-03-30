@@ -1,0 +1,40 @@
+{
+  "name": "Plank",
+  "alias": [],
+  "target": {
+    "Abdominals": "strength",
+    "Lower back": "stabilization",
+    "Glutes": "stabilization",
+    "Shoulders": "stabilization"
+  },
+  "steps": [
+	"Start in a push-up position on the floor, with your hands shoulder-width apart and your toes on the ground.",
+	"Tighten your abdominal muscles and straighten your spine so that your body forms a straight line from your head to your heels.",
+	"Hold this position for as long as you can, ideally for 30 to 60 seconds.",
+	"Breathe deeply and evenly throughout the exercise.",
+	"To release the plank, lower your knees to the ground and rest in a child's pose or stand up slowly."
+  ],
+  "stages": [],
+  "purpose": ["strength"],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 1,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Keep your elbows slightly bent and your forearms resting on the ground to reduce strain on your wrists.",
+	"Make sure your shoulders are directly above your elbows and your hips are level with your shoulders to maintain proper form.",
+	"Engage your glutes and quadriceps to keep your legs straight and your body stable.",
+	"Don't hold your breath! Remember to breathe steadily and deeply throughout the exercise.",
+	"Increase the duration or difficulty of the plank gradually over time."
+  ],
+  "variations": []
+}

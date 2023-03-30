@@ -1,0 +1,42 @@
+{
+  "name": "Bicycle Crunch",
+  "alias": [],
+  "target": {
+    "Rectus Abdominis": "strength",
+    "Obliques": "strength",
+    "Transverse Abdominis": "stability",
+    "Hip Flexors": "activation",
+    "Quadriceps": "activation"
+  },
+  "steps": [
+	"Sit on the floor with your legs extended in front of you and your arms by your sides.",
+	"Engage your core muscles and lean back slightly while simultaneously lifting your legs off the ground. Your body should form a V-shape.",
+	"Keep your back straight and your chest lifted.",
+	"Reach your arms forward parallel to your legs.",
+	"Hold the position for as long as you can, ideally for 30 to 60 seconds.",
+	"To release the pose, lower your legs and arms to the ground and rest for a few seconds."
+  ],
+  "stages": [],
+  "purpose": ["strength"],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Keep your lower back pressed firmly into the ground throughout the exercise.",
+	"Keep your movements controlled and avoid using momentum to swing your legs.",
+	"Focus on twisting your torso to bring your elbow towards your opposite knee, rather than just lifting your shoulder towards your knee.",
+	"Keep your neck relaxed and avoid pulling on your head with your hands.",
+	"Breathe steadily throughout the exercise."
+  ],
+  "variations": ["crunch"]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Side Plank",
+  "alias": [],
+  "target": {
+    "Obliques": "strength",
+    "Transverse Abdominis": "stability",
+    "Gluteus Medius": "activation",
+    "Adductors": "activation",
+    "Quadratus Lumborum": "stability",
+    "Shoulders": "stability",
+    "Scapular Muscles": "stability"
+  },
+  "steps": [
+	"Lie on your side with your legs straight and your feet stacked on top of each other. Your elbow should be directly under your shoulder and your forearm on the ground, perpendicular to your body.",
+	"Engage your core muscles and lift your hips off the ground, creating a straight line from your head to your feet.",
+	"Keep your neck in a neutral position and your eyes facing forward.",
+	"Hold the position for as long as you can, ideally for 30 to 60 seconds.",
+	"To release the plank, lower your hips to the ground and rest for a few seconds before switching sides."
+  ],
+  "stages": [],
+  "purpose": ["stability", "balance"],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 1,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Keep your elbow directly under your shoulder to maintain proper alignment and reduce strain on your shoulder joint.",
+	"Keep your hips lifted and your body in a straight line from your head to your feet.",
+	"Engage your obliques to keep your body stable and avoid any sagging or twisting.",
+	"Keep your breathing slow and steady throughout the exercise."
+  ],
+  "variations": []
+}

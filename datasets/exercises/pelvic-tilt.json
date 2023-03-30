@@ -1,0 +1,38 @@
+{
+  "name": "Pelvic Tilt",
+  "alias": [],
+  "target":{
+    "Abdominals": "strength",
+    "Hip flexors": "stretch",
+    "Lower back": "stretch"
+  },
+  "steps": [
+    "Lie down on your back with your knees bent and feet flat on the ground, hip-width apart.",
+    "Make sure your spine is in a neutral position, with a small space between your lower back and the ground.",
+    "Inhale deeply, and as you exhale, gently tilt your pelvis backwards, pressing your lower back into the ground.",
+    "Hold for a few seconds, then release the tilt and return to the starting position.",
+    "Inhale again, and as you exhale, tilt your pelvis forward, arching your lower back slightly off the ground.",
+    "Hold for a few seconds, then release the tilt and return to the starting position.",
+    "Repeat the movement, alternating between tilting your pelvis backward and forward.",
+    "Make sure to keep your movements slow and controlled, and focus on using your abdominal muscles to tilt your pelvis.",
+    "To make the exercise more challenging, you can hold the pelvic tilt for longer or add a gentle squeeze of the glutes.",
+    "Remember to breathe throughout the exercise, inhaling before each tilt and exhaling as you hold the tilt."
+  ],
+  "stages": [],
+  "purpose": ["stretch", "strength"],
+  "recommendations": {
+    "time_by_round": 30,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [],
+  "variations": []
+}

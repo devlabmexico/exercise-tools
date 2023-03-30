@@ -1,0 +1,41 @@
+{
+  "name": "Squats With an Exercise Ball",
+  "alias": [],
+  "target": {
+    "Quadriceps": "strength",
+    "Glutes": "strength",
+    "Hamstrings": "strength",
+    "Core": "activation"
+  },
+  "steps": [
+	"Stand with your feet shoulder-width apart and your toes pointing forward.",
+	"Hold an exercise ball against a wall with your lower back pressed firmly against it.",
+	"Engage your core muscles and keep your back straight.",
+	"Slowly lower your body into a squat by bending your knees and pushing your hips back, keeping the ball pressed against the wall.",
+	"Stop when your thighs are parallel to the ground or slightly lower.",
+	"Pause for a moment, then push back up to the starting position, keeping the ball against the wall"
+  ],
+  "stages": [],
+  "purpose": ["stability", "prenatal", "strength"],
+  "recommendations": {
+    "time_by_round": 30,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 12,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Don't let your knees cave inwards, keep them pointing in line with your toes.",
+	"Keep your weight on your heels and your toes lifted to prevent your knees from going past your toes.",
+	"Keep your back straight and avoid rounding your lower back.",
+	"Use a light ball or no ball at all until you feel comfortable with the movement.",
+	"Gradually increase the weight of the ball as you become more confident and stronger."
+  ],
+  "variations": ["squats"]
+}

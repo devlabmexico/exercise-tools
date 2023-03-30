@@ -1,0 +1,41 @@
+{
+  "name": "V-sit Pose",
+  "alias": [],
+  "target": {
+    "Rectus Abdominis": "strength",
+    "Hip Flexors": "strength",
+    "Spinal Erectors": "activation"
+  },
+  "steps": [
+	"Lie on your back with your knees bent and your feet flat on the ground.",
+	"Place your hands behind your head, with your elbows pointing out to the sides.",
+	"Lift your head, neck, and shoulders off the ground, and engage your core muscles.",
+	"Lift your feet off the ground and bring your right knee towards your chest while extending your left leg out straight.",
+	"Twist your torso to bring your left elbow towards your right knee, keeping your head lifted.",
+	"Straighten your right leg and bring your left knee towards your chest while twisting your torso to bring your right elbow towards your left knee.",
+	"Continue alternating sides in a pedaling motion, as if you are riding a bicycle."
+  ],
+  "stages": [],
+  "purpose": ["stability", "posture"],
+  "recommendations": {
+    "time_by_round": 135,
+    "relax_by_rep": 15,
+    "by_side": false,
+    "repetitions": 3,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+	"Start with a modified version of the pose by bending your knees and placing your feet flat on the ground.",
+	"Keep your neck in a neutral position and your eyes facing forward.",
+	"Engage your core muscles throughout the exercise to maintain stability.",
+	"Focus on lifting your chest up and keeping your shoulders relaxed.",
+	"Keep your breathing slow and steady throughout the exercise."
+  ],
+  "variations": []
+}

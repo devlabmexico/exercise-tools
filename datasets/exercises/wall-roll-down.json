@@ -1,0 +1,37 @@
+{
+  "name": "Wall Roll Down",
+  "alias": [],
+  "target": {
+    "Hamstrings": "stretch",
+    "Spinal Erectors": "stretch",
+    "Hip Flexors": "stretch",
+    "Shoulders": "stretch",
+    "Neck": "stretch"
+  },
+  "steps": [
+	"Stand with your back against a wall and your feet shoulder-width apart.",
+	"Slowly lower your chin towards your chest, keeping your shoulders relaxed and your back against the wall.",
+	"As you continue to lower your chin towards your chest, slowly roll your spine down the wall, one vertebra at a time, until your entire back is flat against the wall and your chin is tucked in.",
+	"Hold this position for a few seconds, feeling the stretch in your back and neck.",
+	"Slowly roll your spine back up the wall, one vertebra at a time, until you are standing straight again with your chin level."
+  ],
+  "stages": ["warm-up", "cool-down"],
+  "purpose": ["flexibility", "posture", "reduce tightness"],
+  "recommendations": {
+    "time_by_round": 0,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "daily",
+    "period": "15 days"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {}
+  },
+  "comments": [
+     "Make sure to move slowly and smoothly, and focusing on the stretch in your back and neck"
+  ],
+  "variations": []
+}
