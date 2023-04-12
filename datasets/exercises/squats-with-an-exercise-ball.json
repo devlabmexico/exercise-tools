@@ -26,6 +26,9 @@
     "frequency": "daily",
     "period": "15 days"
   },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/squat_with_an_exercise_ball.png"
+  },
   "restrictions": {
     "age": {},
     "ailing": {}

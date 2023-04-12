@@ -6,13 +6,18 @@ body {
   max-width: 100% !important;
 }
 
-fieldset {
+.fieldset_remove_decoration {
   border: none !important;
-  display: flex !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
+}
+
+.remove_border {
+  border: none !important;
 }
 
 .hide {
@@ -37,6 +42,10 @@ fieldset {
 }
 
 .selected_exercises .cell {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .exercises {
@@ -47,6 +56,10 @@ fieldset {
   padding: 10px;
 }
 
+.recommendations, .notes {
+  display: none;
+}
+
 .selected {
   background-color: darkgray;
   color: #303030;
@@ -55,6 +68,44 @@ fieldset {
 .exercise-config {
   display: flex;
   flex-wrap: wrap;
+}
+
+.align_baseline_elements {
+  display: flex !important;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.resize_vertical {
+  resize: vertical;
+}
+
+#notesEditor {
+  width: 100%;
+}
+
+.instructions {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.instructions .image {
+  height: 120px;
+  width: 200px;
+  display: flex;
+  grid-column: 1;
+  justify-content: center;
+  align-self: center;
+}
+
+.instructions > ul {
+  grid-column: 2 / 5;
+}
+
+.instructions .image img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .options {
@@ -93,6 +144,29 @@ fieldset {
 
 }
 
+input:invalid {
+  border: solid red 3px;
+}
+
+fieldset label {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .options {
+    flex-wrap: wrap-reverse;
+  }
+
+  .pages {
+    grid-column: 1 / 5;
+  }
+  .exercises {
+    grid-column: 1 / 5;
+    margin-left: 0;
+    margin-top: 25px;
+  }
+}
+
 @media print {
   .container {
     width: 100%;
@@ -103,8 +177,20 @@ fieldset {
     width: 100%;
   }
 
+  .selected_exercises .cell {
+    break-inside: avoid;
+  }
+
   .exercises {
 
+  }
+  .notes {
+    display: block;
+  }
+  .recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .hide_on_print {

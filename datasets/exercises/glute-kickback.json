@@ -27,6 +27,9 @@
     "frequency": "daily",
     "period": "15 days"
   },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/glute_kickback.png"
+  },
   "restrictions": {
     "age": {},
     "ailing": {}

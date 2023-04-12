@@ -1,5 +1,8 @@
-<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-
+<!--link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"-->
+Opciones
+{affected_zone}
+{exercise_type}
+{severity}
 
 <div id="root"></div>
 
@@ -23,49 +26,82 @@
   // Initialize htm with Preact
   const html = htm.bind(h);
 
-  function SelectedExercise (props)  {
-    let exercises = Object.entries(props.exercises).map(([name, exercise]) => {
-      let steps = exercise.steps.map(step => html`<li>${step}</li>`);
-      let instructions = props.options.instructions ? html`<ul>${steps}</ul>` : ""  
-      return html`<div className="cell border" onDblClick=${(event) => props.toggleExercise(name, exercise)}>
+  function SelectedExercise ({name, exercise, showInstructions, toggleExercise, updateRecommendations})  {
+    let recommendations = exercise.recommendations;
+    let steps = exercise.steps.map(step => html`<li>${step}</li>`);
+    let instructions = showInstructions ? html`<ul>${steps}</ul>` : "";
+
+    return html`<div className="cell border" onDblClick=${(event) => toggleExercise(name, exercise)}>
+      <div>
         <h3>${exercise.name}</h3>
-        ${instructions}
-        <div className="exercise-config">
-        <fieldset> 
-          <label>"time_by_round"</label>
-          <input type=number value=60 name="Time by round" />
-        </fieldset>
-        <fieldset> 
-          <label>"relax_by_rep"</label>
-          <input type=number value=0 name="relax_by_rep" />
-        </fieldset>
-        <fieldset> 
-          <label>"by_side"</label>
-          <input type=checkbox  name="by_side" checked />
-        </fieldset>
-        <fieldset> 
-          <label>"repetitions"</label>
-          <input type=number  name="repetitions" value=10 />
-        </fieldset>
-        <fieldset> 
-          <label>"series"</label>
-          <input type=number  name="series" value=3 />
-        </fieldset>
-        <fieldset> 
-          <label for="frequency">"frequency"</label>
-          <select id="frequency">
-            <option value="daily">daily</option>
-          </select>
-        </fieldset>
-        <fieldset> 
-          <label for="period">"period"</label>
-          <select id="period">
-            <option value="15 days">15 days</option>
-          </select>
-        </fieldset>
+        <div className="instructions">
+          <div className="image"><img src="${exercise.resources.image}" /></div>
+          ${instructions}
         </div>
-      </div>`
-    });
+      </div>
+      <div className="exercise-config hide_on_print">
+        <fieldset className="fieldset_remove_decoration"> 
+          <label for="repetitions">Repetitions per round</label>
+          <input id="repetitions" min=0 max=100 type=number value=${recommendations.repetitions} 
+                 onInput=${(e) => updateRecommendations(name, "repetitions", event.target.value) } />
+        </fieldset>        
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="time_by_round" >Time by round (seconds)</label>
+        <input id="time_by_round" min=0 max=6000 type=number value=${recommendations.time_by_round}  
+                 onInput=${(e) => updateRecommendations(name, "time_by_round", event.target.value) } />
+      </fieldset>
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="relax_by_rep">Seconds to relax between repetition</label>
+        <input id="relax_by_rep" min=0 max=6000 type=number value=${recommendations.relax_by_rep}   
+                 onInput=${(e) => updateRecommendations(name, "relax_by_rep", event.target.value) } />
+      </fieldset>
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="by_side">Exercise by side</label>
+        <input id="by_side" type=checkbox   checked=${recommendations.by_side}  
+                 onInput=${(e) => updateRecommendations(name, "by_side", event.target.checked) } />
+      </fieldset>
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="series">Total series</label>
+        <input id="series" min=0 max=30 type=number value=${recommendations.series}  
+                 onInput=${(e) => updateRecommendations(name, "series", event.target.value) } />
+      </fieldset>
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="frequency">Frequency</label>
+        <select id="frequency"  value=${recommendations.frequency}
+                 onInput=${(e) => updateRecommendations(name, "frequency", event.target.value) } >
+          <option value="daily">daily</option>
+        </select>
+      </fieldset>
+      <fieldset className="fieldset_remove_decoration"> 
+        <label for="period">Period</label>
+        <select id="period"  value="${recommendations.period}"
+                 onInput=${(e) => updateRecommendations(name, "period", event.target.value) } >
+          <option value="15 days">15 days</option>
+        </select>
+      </fieldset>
+      </div>
+      <div className="recommendations">
+        <p>Series: ${recommendations.series} 
+                   ${recommendations.relax_by_rep ? 
+                       " with " + recommendations.relax_by_rep + " seconds to relax after each repetition." : ""}
+        </p>          
+        <p>Repetitions: ${recommendations.repetitions}  
+                        ${recommendations.by_side ? " each side " : ""} 
+                        ${recommendations.time_by_round ? 
+                            " in " + recommendations.time_by_round + " seconds" : ""}
+        </p>
+        <p>Frequency: <div style="display: inline-block; text-transform: capitalize;">${recommendations.frequency}</div> by a period of ${recommendations.period}</p>
+      </div>
+    </div>`
+  
+  }
+  function SelectedExercises (props)  {
+    let exercises = Object.entries(props.exercises).map(([name, exercise]) => 
+                      html`<${SelectedExercise} name=${name} 
+                                            exercise=${exercise}
+                                            updateRecommendations=${props.updateRecommendations}
+                                            showInstructions=${props.options.instructions} 
+                                            toggleExercise=${props.toggleExercise} />`);
     return html`<div className="${props.className}">
        ${exercises}
     </div>
@@ -87,14 +123,14 @@
     }
 
     return html`<div>
-      <fieldset>
+      <fieldset className="fieldset_remove_decoration">
       <label for="body_part">Exercise Area</label>  
       <select value=${area} id="body_part" onInput=${handleSelectArea}>
         <option value="null">All</option>
         ${areas}
       </select>
       </fieldset>
-      <fieldset>
+      <fieldset className="fieldset_remove_decoration">
       <label for="action">Exercise Effect</label>
       <select value=${effect} id="action" onInput=${(e) => updateEffect(event.target.value) }>
         <option value="null">All</option>
@@ -148,13 +184,13 @@
 
     return html`
     <div className="options hide_on_print">
-      <fieldset>
+      <fieldset className="fieldset_remove_decoration">
       <label for="orientation">Orientation</label>
       <select id="orientation" value=${options.orientation} onInput=${e => handleUpdateOption("orientation", e.target.value)}>
         <option value="portrait">Portrait</option>
         <option value="landscape">Landscape</option>
       </select>
-      </fieldset><fieldset>
+      </fieldset><fieldset className="fieldset_remove_decoration">
       <label for="columns">Number of columns</label>
       <select id="columns" value=${options.columns} onInput=${e => handleUpdateOption("columns", e.target.value)}>
         <option value="1">1</option>
@@ -162,7 +198,7 @@
         <option value="3">3</option>
         <option value="4">4</option> 
       </select>
-      </fieldset><fieldset>
+      </fieldset><fieldset className="fieldset_remove_decoration">
       <input type="checkbox" id="instructions" 
          name="instructions" 
          checked=${options.instructions === true} 
@@ -171,24 +207,23 @@
       <label for="instructions">Show Instructions</label>
       
       </fieldset>
-      <a href="javascript:window.print()" class="hide_on_print btn">Print this Page</a>
-
     </div>`
   }
 
   function App (props) {
-    const [configuration, setConfiguration] = useState({}); 
-    const [exercises, setExercises] = useState({});
-    const [selectedExercises, setSelectedExercises] = useState({});
+    const [configuration, setConfiguration] = useState({}) 
+    const [exercises, setExercises] = useState({})
+    const [selectedExercises, setSelectedExercises] = useState({})
     const [exerciseArea, setExerciseArea] = useState([])
     const [exerciseEffect, setExerciseEffect] = useState(new Set())
+    const [notes, setNotes] = useState("")
     const [options, setOptions] = useState({
       orientation: "portrait",
       columns: "1",
       instructions: true,
     }) 
 
-    function toggleExercise(name, current_exercise) {
+    let toggleExercise = (name, current_exercise) => {
         if (selectedExercises[name] === undefined) {
           let newSelectedExercises = { ...selectedExercises, [name]: current_exercise};
           setSelectedExercises(newSelectedExercises);
@@ -204,6 +239,22 @@
         setExercises(newExercises);
         console.log("remove exercise")
     }
+
+    let updateRecommendations = (exerciseName, fieldName, newValue) => {
+      let exercise = selectedExercises[exerciseName];
+      setSelectedExercises({
+        ...selectedExercises, 
+        [exerciseName]: {
+          ...exercise, 
+          recommendations: {
+            ...exercise.recommendations, 
+            [fieldName]: newValue
+          }
+        }
+      })
+
+    }
+
 
     useEffect(() => {
       let raw_data = document.querySelector("#data").textContent;
@@ -225,6 +276,7 @@
       setExerciseArea(exerciseArea);
       setExercises(exercises);
       setConfiguration(jsonConfiguration);
+      setNotes(jsonConfiguration.diagnosis);
     }, []);
 
     useEffect(() => {
@@ -250,8 +302,41 @@
       r.style.setProperty('--exercises_rows', options.columns);
     }, [options.columns]);
 
+    function downloadRoutine() {
+      if (Object.keys(selectedExercises).length == 0) {
+        alert("Nothing to download");
+        return;
+      }
+
+      let routine = { 
+        configuration,
+        notes,
+        exercises: selectedExercises,
+        options 
+      }
+
+      let text = JSON.stringify(routine)
+      let objectDate = new Date();
+      let day = objectDate.getDate();
+      let month = objectDate.getMonth();
+      let year = objectDate.getFullYear();
+      let filename = `${configuration.patient_name.replaceAll(' ', '_')}-${month}-${day}-${year}.json`
+      let element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
+    }
+
     return html`<div>
       <${PrintOptions} setOptions=${setOptions} options=${options}/>
+      <button onClick=${() => window.print()} class="hide_on_print btn">Print this Page</a>
+      <button onClick=${() => downloadRoutine()} class="hide_on_print btn">Download Routine</a>
 
       <div className="container">
         <div className="pages">
@@ -260,14 +345,19 @@
           <p className="no-margin"><strong>Health Professional</strong>: ${configuration.professional_name}</p>
           <p><strong>Patient</strong>: ${configuration.patient_name}</p>
           <hr />
-          <p><strong>Notes</strong>: ${configuration.diagnosis}</p> 
+          <fieldset className="align_baseline_elements remove_border hide_on_print">
+            <label className="hide_on_print" for="notesEditor">Notes</strong>
+            <textarea className="resize_vertical hide_on_print" id="notesEditor" value=${notes} cols=180 rows=3 oninput=${(e) => setNotes(event.target.value) } />
+          </fieldset>
+          <p className="notes"><strong>Notes</strong>: <pre style="word-wrap: break-word; white-space: pre-wrap;">${notes}</pre></p> 
           <hr />
 
         </div>
-        <${SelectedExercise} className="selected_exercises" 
+        <${SelectedExercises} className="selected_exercises" 
                              exercises=${selectedExercises} 
                              toggleExercise=${toggleExercise}
                              options=${options}
+                             updateRecommendations=${updateRecommendations}
         />
         </div>
         <${ListExercises} className="exercises hide_on_print" exercises=${exercises} 
@@ -280,5 +370,11 @@
   }
 
   const root = document.querySelector("#root");
-  render(html`<${App} name="World" />`, root);
+  (function loader() {
+    if (document.querySelector("#data").textContent.trim() !== '') {
+      render(html`<${App} name="World" />`, root);
+      return;
+    }
+    setTimeout(loader, 500);
+   })()
 </script>

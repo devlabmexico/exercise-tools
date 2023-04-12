@@ -26,6 +26,9 @@
     "frequency": "daily",
     "period": "15 days"
   },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/wall_row_down.png"
+  },
   "restrictions": {
     "age": {},
     "ailing": {}
