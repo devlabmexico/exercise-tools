@@ -1,0 +1,67 @@
+---
+crosscompute: 0.9.3
+
+name: Routine Tracker Tool
+description: Track your performances with this tool.
+slug: routine-tracker
+version: 0.0.1
+
+input:
+  variables:
+    - id: routine
+      view: text
+      path: routine.json
+      configuration:
+        label: Routine File
+
+output:
+  variables:
+    - id: exercises
+      view: json
+      path: exercises.json
+
+  templates:
+     - path: routine_tracker.md
+
+batches:
+  - folder: batches/standard
+
+
+scripts:
+  - path: run.ipynb
+
+display:
+  styles:
+    - path: style.css
+    - uri: https://fonts.googleapis.com/css?family=Tangerine
+
+  pages:
+    - id: output
+      configuration:
+        design: none
+        
+environment:
+  engine: unsafe
+
+# authorization configuration
+# authorization:
+#   tokens:
+#     - path: tokens.yml
+#   groups:
+#     - configuration:
+#         role_name: admin
+#       permissions:
+#         - id: add_token
+#         - id: see_root
+#         - id: see_automation
+#         - id: see_batch
+#         - id: run_automation
+#     - configuration:
+#         role_name:
+#           - leader
+#           - member
+#       permissions:
+#         - id: see_root
+#         - id: see_automation
+#         - id: see_batch
+#           action: match

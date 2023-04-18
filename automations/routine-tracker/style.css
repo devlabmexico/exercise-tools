@@ -1,0 +1,77 @@
+:root {
+  --exercises_rows: 2;
+}
+
+body {
+  max-width: 100% !important;
+}
+
+.remove_border {
+  border: none !important;
+}
+
+.hide {
+  display: none;
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.container {
+
+}
+
+.exercises {
+
+}
+
+
+.portrait {
+
+}
+
+.landscape {
+
+}
+
+#perform_exercise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+#perform_exercise .exercise_img {
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#perform_exercise header {
+  text-align: center;
+}
+
+#perform_exercise .exercise_img img {
+  max-width: 80vw;
+  object-fit: contain;
+}
+
+#perform_exercise .exercise_actions {
+  margin-top: 25px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .exercises {
+
+  }
+
+  #perform_exercise .exercise_img {
+    width: 80vw;
+  }
+}
