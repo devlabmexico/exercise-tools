@@ -91,12 +91,13 @@
     `
   }
 
-  const PerformRoutine = ({dispatch, exercise}) => {
+  const PerformRoutine = ({dispatch, exercise, exercises}) => {
     let stageExercise = exercise.stage === EXERCISE_REST_TIME ? 
       html`<${RestExercise} dispatch=${dispatch} exercise=${exercise} />` : 
       html`<${PerformExercise} dispatch=${dispatch} exercise=${exercise} />`
     return html`<div id="perform_routine">
       ${stageExercise}
+      <${ListExercises} exercises=${exercises} currentExercise=${exercise.index} />
     </div>
     `
   }
@@ -110,19 +111,19 @@
     `
   }
 
-  const ListExercises = ({exercises}) => {
+  const ListExercises = ({exercises, currentExercise}) => {
     console.log(exercises)
-    const exercisesList = exercises.map(exercise => html`<li className="exercise_row">
-      <div className="thumbnail">
-        <img src=${exercise.resources.image} />
-      </div>
-      ${exercise.name}
-    </li>`)
-    return html`<div>
+    const exercisesList = exercises.map((exercise, index) => 
+      html`<li className="exercise_row ${currentExercise === index ? "active" : ""}">
+        <div className="thumbnail">
+          <img src=${exercise.resources.image} />
+        </div>
+        ${exercise.name}
+      </li>`)
+    return html`
       <ul className="exercise_list">
         ${exercisesList}
-      </ul>
-    </div>`
+      </ul>`
   }
 
   const RestExercise = ({dispatch, exercise}) => {

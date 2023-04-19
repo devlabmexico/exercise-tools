@@ -35,11 +35,29 @@ body {
 
 }
 
+#perform_routine {
+  display: flex;
+}
+
+#perform_routine .exercise_list {
+  padding-left: 15px;
+  width: 20vw;
+}
+
+#restExercise {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #perform_exercise {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
+  width: 80vw;
 }
 
 #perform_exercise .exercise_img {
@@ -71,8 +89,7 @@ body {
   margin-right: 25px;
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
 }
 
 .thumbnail img {
@@ -95,18 +112,29 @@ body {
 .exercise_row {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
   border-top: 2px solid #F0F0F0;
+}
+
+.exercise_row.active {
+  background-color: #FAFAFA;
 }
 
 .text-center {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .exercises {
 
+  }
+
+  #perform_routine .exercise_list {
+    display: none;
+  }
+
+  #perform_exercise {
+    width: 100vw;
   }
 
   #perform_exercise .exercise_img {
