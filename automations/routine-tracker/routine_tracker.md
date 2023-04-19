@@ -10,27 +10,44 @@
   import { createContext, Component, Fragment, h, render} from 'https://esm.sh/preact';
   import htm from 'https://esm.sh/htm';
   import { useContext, useEffect, useState,  useReducer} from 'https://esm.sh/preact/hooks';
+  import { signal } from 'https://esm.sh/@preact/signals';
 
-  const STANDARD_REST_TIME = 2000;
-  const Timer = function(callback, delay) {
-      var timerId, start, remaining = delay;
-  
-      this.pause = function() {
-          window.clearTimeout(timerId);
-          timerId = null;
-          remaining -= Date.now() - start;
+
+  const STANDARD_REST_TIME = 2;
+  const Timer = function(callback, delay, step) {
+      const self = this;
+
+      let timerId = null;  
+      let cycles = signal(1);
+      let called_callback = false;
+      this.tick = function() {
+        if (cycles.value >= delay) {
+          if (cycles.value >= delay && !called_callback) {
+            callback();
+            called_callback = true;
+          }
+          self.pause();
+          return; 
+        }
+        cycles.value += 1;
+        if (step) step();
       };
-  
+
+      this.pause = function() {
+        window.clearInterval(timerId);
+        timerId = null;
+      };
+
       this.resume = function() {
           if (timerId) {
               return;
           }
-  
-          start = Date.now();
-          timerId = window.setTimeout(callback, remaining);
+          
+          timerId = window.setInterval(this.tick, 1000);
       };
   
       this.start = this.resume;
+      this.cycles = cycles;
   };
   
   const StateAccessor = createContext('light');
@@ -91,18 +108,22 @@
 
   const RestExercise = ({dispatch, exercise}) => {
     let skipAction = () => dispatch({type: EXERCISE_PERFORM})
-
+    let countDown = exercise.restTimer.cycles.value;
     return html`<div id="restExercise">
       <header>
         <strong>Next exercise</strong>
         <h3 className="exercise_name">${exercise.exercise.name}</h3>
       </header>
+      <div>
+        <h1>${countDown}</h1>
+      </div>
       <div className="exercise_actions">
         <button onClick=${skipAction}>Skip rest time</button>
       </div>
     </div>`
   }
   const PerformExercise = ({dispatch, exercise}) => {
+    let countDown = exercise.timer ? html`<h3>${exercise.timer.cycles.value}</h3>` : '';
     let endAction = () => {
       dispatch({type: EXERCISE_FINISH, dispatch})
       dispatch({type: ROUTINE_FINISH, dispatch})
@@ -142,7 +163,10 @@
       <button onClick=${endAction}>Finish routine</button>
       <div className="exercise_img">
         <img src=${exercise.exercise.resources.image} />
-      </div>  
+      </div>
+      <div>
+        <h1>${countDown}</h1>
+      </div>
       <div className="exercise_actions">
         ${pauseComponent}
       </div>
@@ -157,20 +181,23 @@
         if (state.currentExercise.index === undefined) return state;
         { 
           let currentExercise = {...state.currentExercise}
+          let restTime = state.currentExercise.exercise && state.currentExercise.exercise.recommendations ? state.currentExercise.exercise.recommendations.relax_by_rep : 0;
           currentExercise.stage = action.type
           currentExercise.exercise = state.exercises[currentExercise.index]
 
           let exerciseTime = currentExercise.exercise.recommendations.time_by_round
+          console.log(exerciseTime)
           if (exerciseTime > 0) {
             let timer = new Timer(() => {
-              dispatch({type: EXERCISE_FINISH, dispatch})
-              dispatch({type: EXERCISE_NEXT, dispatch}) 
-              dispatch({type: EXERCISE_SETUP})
-              dispatch({type: EXERCISE_REST_TIME, dispatch})
+              action.dispatch({type: EXERCISE_FINISH})
+              action.dispatch({type: EXERCISE_NEXT}) 
+              action.dispatch({type: EXERCISE_SETUP, dispatch: action.dispatch})
+              action.dispatch({type: EXERCISE_REST_TIME, dispatch: action.dispatch})
               
             }, exerciseTime)
-            currentExercise.timer = action.timer;
-          } 
+            currentExercise.timer = timer;
+          }
+          currentExercise.restTime = restTime || STANDARD_REST_TIME
           return {...state, currentExercise}
         }
       case EXERCISE_PERFORM:
@@ -211,7 +238,8 @@
         if (state.currentExercise.index === undefined) return state; 
         let timer = new Timer(() => {
           action.dispatch({type: EXERCISE_PERFORM})
-        }, STANDARD_REST_TIME)
+        }, state.currentExercise.restTime)
+        console.log(state.currentExercise.restTime)
         timer.start()
         return {...state, currentExercise: {...state.currentExercise, restTimer: timer, stage: action.type}}
       case EXERCISE_FINISH: 
