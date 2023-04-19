@@ -22,7 +22,7 @@
       let called_callback = false;
       this.tick = function() {
         if (cycles.value >= delay) {
-          if (cycles.value >= delay && !called_callback) {
+          if (!called_callback) {
             callback();
             called_callback = true;
           }
@@ -75,14 +75,18 @@
   const EXERCISE_STOP = 'STOP_EXERCISE'
   const EXERCISE_FINISH = 'STOP_EXERCISE'
 
-  const StartRoutine = ({dispatch, exercises}) => {
+  const StartRoutine = ({dispatch, exercises, configuration, notes}) => {
+    console.log(configuration)
     let startAction = () => {
       dispatch({type: ROUTINE_PERFORM})
       dispatch({type: EXERCISE_SETUP, dispatch})
       dispatch({type: EXERCISE_PERFORM})
     }
     return html`<div id="start_routine">
+      <h2 className="text-center">${configuration ? configuration.diagnosis : ""}</h2>
+      <p>${exercises.length} exercises</p>
       <button onClick=${startAction}>Start routine</button>
+      <${ListExercises} exercises=${exercises} />
     </div>
     `
   }
@@ -104,6 +108,21 @@
       <button onClick=${restartAction}>Download Progress</button>
     </div>
     `
+  }
+
+  const ListExercises = ({exercises}) => {
+    console.log(exercises)
+    const exercisesList = exercises.map(exercise => html`<li className="exercise_row">
+      <div className="thumbnail">
+        <img src=${exercise.resources.image} />
+      </div>
+      ${exercise.name}
+    </li>`)
+    return html`<div>
+      <ul className="exercise_list">
+        ${exercisesList}
+      </ul>
+    </div>`
   }
 
   const RestExercise = ({dispatch, exercise}) => {
@@ -205,10 +224,10 @@
         if (state.currentExercise.timer) state.currentExercise.timer.start();
         return {...state, currentExercise: {...state.currentExercise, restTimer: undefined, stage: action.type}}
       case EXERCISE_PAUSE:
-        if (state.currentExercise.timer) currentExercise.timer.pause();
+        if (state.currentExercise.timer) state.currentExercise.timer.pause();
         return {...state, currentExercise: {...state.currentExercise, stage: action.type}}
       case EXERCISE_RESUME:
-        if (state.currentExercise.timer) currentExercise.timer.resume();
+        if (state.currentExercise.timer) state.currentExercise.timer.resume();
         return {...state, currentExercise: {...state.currentExercise, stage: action.type}}
       // case EXERCISE_STOP:
       case EXERCISE_PREVIOUS:
@@ -286,8 +305,12 @@
     }, []);
 
     const component = state.routineStage == ROUTINE_INITIAL_STATE ? 
-                         StartRoutine({dispatch, exercises: state.exercises}) :
-                      state.routineStage == ROUTINE_FINISH ? 
+                         StartRoutine({
+                                        dispatch, 
+                                        exercises: state.exercises, 
+                                        configuration: routine.configuration, 
+                                        notes: routine.notes
+                         }) : state.routineStage == ROUTINE_FINISH ? 
                          EndRoutine({dispatch}) :
                          PerformRoutine({dispatch, exercises: state.exercises, exercise: state.currentExercise})
     return html`<${StateAccessor.Provider} value=${slicer(state)}>
