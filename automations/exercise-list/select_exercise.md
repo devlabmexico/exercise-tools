@@ -1,5 +1,8 @@
 <!--link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"-->
-Opciones
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
 {affected_zone}
 {exercise_type}
 {severity}
@@ -143,6 +146,7 @@ Opciones
   function ListExercises (props) {
     const [selectedArea, setSelectedArea] = useState("null"); 
     const [selectedAction, setSelectedAction] = useState("null");
+    const [showFilters, setShowFilters] = useState(false);
 
     let exercises = Object.entries(props.exercises)
                           .filter(([name, exercise]) => {
@@ -161,7 +165,8 @@ Opciones
         <p className="no-margin">${exercise.name}</p>
       </div>`
     });
-    return html`<div className=${props.className}>
+
+    let exercisesSection = showFilters ? html`<div className=${props.className}>
        <${ExerciseFilters} exerciseArea=${props.exerciseArea} 
                            exerciseEffect=${props.exerciseEffect}
                            area=${selectedArea}
@@ -169,7 +174,13 @@ Opciones
                            updateArea=${setSelectedArea}
                            updateEffect=${setSelectedAction}
        />
-       ${exercises}
+       ${exercises}</div>
+    `: ''
+    return html`<div>
+       ${exercisesSection}
+       <button className="exercise-toggle btn-action" onClick=${() => setShowFilters(!showFilters)}>
+         Add/Remove Exercises
+       </button> 
     </div>
     `
   }
@@ -335,13 +346,12 @@ Opciones
 
     return html`<div>
       <${PrintOptions} setOptions=${setOptions} options=${options}/>
-      <button onClick=${() => window.print()} class="hide_on_print btn">Print this Page</a>
+      <button onClick=${() => window.print()} class="hide_on_print btn btn-primary">Print Routine</a>
       <button onClick=${() => downloadRoutine()} class="hide_on_print btn">Download Routine</a>
 
       <div className="container">
         <div className="pages">
         <div className="general">
-          <h5>Exercise List</h5>
           <p className="no-margin"><strong>Health Professional</strong>: ${configuration.professional_name}</p>
           <p><strong>Patient</strong>: ${configuration.patient_name}</p>
           <hr />
