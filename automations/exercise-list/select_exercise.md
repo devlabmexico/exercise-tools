@@ -147,6 +147,12 @@
     const [selectedArea, setSelectedArea] = useState("null"); 
     const [selectedAction, setSelectedAction] = useState("null");
     const [showFilters, setShowFilters] = useState(false);
+    const [width, setWidth] = useState(window.innerWidth)
+    
+    useEffect(() => {
+      window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, []);
+
 
     let exercises = Object.entries(props.exercises)
                           .filter(([name, exercise]) => {
@@ -166,7 +172,7 @@
       </div>`
     });
 
-    let exercisesSection = showFilters ? html`<div className=${props.className}>
+    let exercisesSection = window.innerWidth > 768 || showFilters ? html`<div className=${props.className}>
        <${ExerciseFilters} exerciseArea=${props.exerciseArea} 
                            exerciseEffect=${props.exerciseEffect}
                            area=${selectedArea}
