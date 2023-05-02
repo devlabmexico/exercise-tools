@@ -1,10 +1,42 @@
 :root {
   --exercises_rows: 2;
+  --primary-color: rgb(135, 203, 185);
+  --secondary-color: rgb(86, 157, 170);
+  --tertiary-color: rgb(185, 237, 221);
+  --accent-color: rgb(87, 125, 134);
+
+  --hover-bg-color: var(--secondary-color);
+  --hover-font-color: white;
+
+  --selected-bg: var(--accent-color);
+  --selected-color: white;
 }
 
 body {
   max-width: 100% !important;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
+  background-color: #FAFAFA;
 }
+
+button, select {
+    border: none;
+    height: 40px;
+    padding: 10px;
+    box-shadow: 2px 1px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
 
 .remove_border {
   border: none !important;
@@ -60,11 +92,13 @@ body {
   width: 80vw;
 }
 
+
 #perform_exercise .exercise_img {
   height: 80vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 #perform_exercise header {
@@ -77,10 +111,14 @@ body {
 }
 
 #perform_exercise .exercise_actions {
-  margin-top: 25px;
   width: 80%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.finish-routine {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .thumbnail {
@@ -105,6 +143,11 @@ body {
   align-items: center;
 }
 
+#end_routine {
+  display: grid;
+  justify-content: center;
+}
+
 .exercise_list {
   padding: 0;
 }
@@ -117,7 +160,8 @@ body {
 }
 
 .exercise_row.active {
-  background-color: #FAFAFA;
+  background-color: var(--selected-bg);
+  color: #FAFAFA;
 }
 
 .text-center {
@@ -127,6 +171,11 @@ body {
 @media only screen and (max-width: 800px) {
   .exercises {
 
+  }
+
+  #restExercise {
+    height: 100vh;
+    width: 100vw;
   }
 
   #perform_routine .exercise_list {

@@ -1,4 +1,8 @@
 <!--link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css"-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
 <div id="root"></div>
 
 <span id="data" class="hide">
@@ -85,7 +89,7 @@
     return html`<div id="start_routine">
       <h2 className="text-center">${configuration ? configuration.diagnosis : ""}</h2>
       <p>${exercises.length} exercises</p>
-      <button onClick=${startAction}>Start routine</button>
+      <button className="btn-primary" onClick=${startAction}>Start routine</button>
       <${ListExercises} exercises=${exercises} />
     </div>
     `
@@ -105,8 +109,8 @@
   const EndRoutine = ({dispatch, exercises}) => {
     let restartAction = () => dispatch({type: ROUTINE_INITIAL_STATE})
     return html`<div id="end_routine">
-      <h3>Congratulations!</h3>
-      <button onClick=${restartAction}>Download Progress</button>
+      <h1>Congratulations!</h1>
+      <button className="btn-primary" onClick=${restartAction}>Restart routine</button>
     </div>
     `
   }
@@ -143,7 +147,7 @@
     </div>`
   }
   const PerformExercise = ({dispatch, exercise}) => {
-    let countDown = exercise.timer ? html`<h3>${exercise.timer.cycles.value}</h3>` : '';
+    let countDown = exercise.timer ? html`<h1>${exercise.timer.cycles.value}</h1>` : '';
     let endAction = () => {
       dispatch({type: EXERCISE_FINISH, dispatch})
       dispatch({type: ROUTINE_FINISH, dispatch})
@@ -168,11 +172,11 @@
     let relax_by_rep = recommendations.relax_by_rep != 0 ? recommendations.relax_by_rep : ""
     let series = recommendations.series != 0 ? html`x <strong>${recommendations.series}</strong>` : ""
     let pauseComponent = exercise.stage !== EXERCISE_PAUSE ?
-        html`<button onClick=${previousExerciseAction} disabled=${exercise.index === 0}>Previous exercise</button>
-             <button onClick=${pauseAction}>Pause</button>
-             <button onClick=${nextExerciseAction}>Next Exercise</button>
+        // html`<button onClick=${previousExerciseAction} disabled=${exercise.index === 0}>Previous exercise</button>
+        html`<button onClick=${pauseAction}>Pause</button>
+             <button className="btn-primary"  onClick=${nextExerciseAction}>Next Exercise</button>
         ` :
-        html`<button onClick=${resumeAction}>Resume</button>`
+        html`<button className="btn-primary" onClick=${resumeAction}>Resume</button>`
     return html`<div id="perform_exercise">
       <header>
         <h3 className="exercise_name">${exercise.exercise.name}</h3>
@@ -180,12 +184,12 @@
           ${by_side}
           ${series}
       </header>
-      <button onClick=${endAction}>Finish routine</button>
+      <button className="finish-routine" onClick=${endAction}>Finish routine</button>
       <div className="exercise_img">
         <img src=${exercise.exercise.resources.image} />
       </div>
       <div>
-        <h1>${countDown}</h1>
+        ${countDown}
       </div>
       <div className="exercise_actions">
         ${pauseComponent}
