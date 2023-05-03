@@ -1,0 +1,49 @@
+{
+  "name": "Shoulder Rolls",
+  "alias": [],
+  "target": {
+    "shoulders": "flexibility",
+    "upper back": "mobility"
+  },
+  "steps": [
+    "Stand with your feet shoulder-width apart and your arms at your sides.",
+    "Inhale deeply and raise your shoulders up towards your ears.",
+    "Exhale and roll your shoulders backwards in a circular motion, squeezing your shoulder blades together as you do so.",
+    "Continue rolling your shoulders backwards for several repetitions.",
+    "Reverse the direction of the shoulder rolls and roll your shoulders forwards in a circular motion."
+  ],
+  "stages": [
+    "warm-up",
+    "cooldown"
+  ],
+  "purpose": [
+    "mobility",
+    "flexibility",
+    "posture"
+  ],
+  "recommendations": {
+    "time_by_round": 30,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 10,
+    "series": 2,
+    "frequency": "daily",
+    "period": "1 month"
+  },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/shoulder_rolls.png"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {
+      "shoulder injury": "avoid or modify exercise",
+      "neck pain": "avoid or modify exercise"
+    }
+  },
+  "comments": [
+    "Make sure to keep your head and neck relaxed while performing the exercise.",
+    "You can also perform the exercise while holding light weights to increase the resistance."
+  ],
+  "variations": [
+  ]
+}

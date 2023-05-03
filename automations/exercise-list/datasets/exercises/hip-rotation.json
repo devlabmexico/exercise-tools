@@ -1,0 +1,48 @@
+{
+  "name": "Hip Rotation",
+  "alias": [],
+  "target": {
+    "glutes": "strengthening",
+    "hips": "mobility",
+    "core": "stability"
+  },
+  "steps": [
+    "Lie on your back with your knees bent and feet flat on the ground.",
+    "Extend your arms out to the sides with palms facing down for stability.",
+    "Keeping your knees together, lower them to one side until you feel a stretch or your hip touches the ground.",
+    "Hold for 1-2 seconds, then lift your legs back up to the starting position.",
+    "Lower your legs to the other side and repeat the movement.",
+    "Continue alternating sides for the desired number of repetitions."
+  ],
+  "stages": [
+    "warm-up",
+    "cool-down"
+  ],
+  "purpose": [
+    "stability",
+    "mobility",
+    "posture"
+  ],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 10,
+    "series": 3,
+    "frequency": "2 times per week",
+    "period": "1 month"
+  },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/hip_rotation.png"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {
+      "recent hip injury": "avoid or modify exercise",
+      "lower back pain": "use caution and modify as needed"
+    }
+  },
+  "comments": [],
+  "variations": [
+  ]
+}

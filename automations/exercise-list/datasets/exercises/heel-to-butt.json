@@ -1,0 +1,48 @@
+{
+  "name": "Heel to Butt",
+  "alias": [
+    "Quadriceps Stretch"
+  ],
+  "target": {
+    "quadriceps": "stretching",
+    "hip flexors": "stretching"
+  },
+  "steps": [
+    "Stand up straight with your feet hip-width apart.",
+    "Bend your right knee and bring your right heel towards your buttock.",
+    "Grasp your right ankle with your right hand and hold it in place.",
+    "Hold the stretch for 10-15 seconds or until you feel a stretch in your quadriceps muscle.",
+    "Release the stretch and repeat with your left leg.",
+    "Alternate between your left and right legs for the desired number of repetitions."
+  ],
+  "stages": [
+    "warm-up",
+    "cool-down"
+  ],
+  "purpose": [
+    "flexibility",
+    "mobility"
+  ],
+  "recommendations": {
+    "time_by_round": 20,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 3,
+    "series": 2,
+    "frequency": "daily",
+    "period": "1 month"
+  },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/heel_to_butt.png"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {
+      "knee injury": "avoid or modify exercise",
+      "lower back pain": "use caution and modify as needed"
+    }
+  },
+  "comments": [],
+  "variations": [
+  ]
+}

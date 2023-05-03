@@ -1,0 +1,42 @@
+{
+  "name": "Knee Circles",
+  "alias": [],
+  "target": {
+    "hip joints": "mobility"
+  },
+  "steps": [
+    "Lie down on your back with your legs extended.",
+    "Bend your right knee and bring it towards your chest.",
+    "Place your hands on your right knee and gently circle your knee in a clockwise direction, making small circles with your knee."
+  ],
+  "stages": [
+    "warm-up",
+    "cool-down"
+  ],
+  "purpose": [
+    "mobility",
+    "flexibility"
+  ],
+  "recommendations": {
+    "time_by_round": 20,
+    "relax_by_rep": 0,
+    "by_side": true,
+    "repetitions": 1,
+    "series": 1,
+    "frequency": "daily",
+    "period": "1 month"
+  },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/knee_circles.png"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {
+    }
+  },
+  "comments": [
+    "Perform the exercise slowly and gently, without forcing your knee to move beyond its comfortable range of motion.",
+    "Use your hands to help guide your knee through the circular motion, if necessary."
+  ],
+  "variations": []
+}

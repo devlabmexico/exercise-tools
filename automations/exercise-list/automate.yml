@@ -3,7 +3,7 @@ crosscompute: 0.9.3
 name: Exercise Tool
 description: Exercise Recommender
 slug: exercise-recommender
-version: 0.1.0
+version: 0.1.5
 
 # imports configuration
 # - path to the configuration file that you want to import (required)

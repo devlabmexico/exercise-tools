@@ -1,0 +1,49 @@
+{
+  "name": "Forward Skip",
+  "alias": [],
+  "target": {
+    "cardiovascular system": "aerobic conditioning",
+    "lower body": "strength"
+  },
+  "steps": [
+    "Stand with your feet shoulder-width apart and your arms at your sides.",
+    "Begin by hopping off your left foot and landing on your right foot.",
+    "Immediately hop off your right foot and land on your left foot.",
+    "Continue hopping back and forth in a rhythmic pattern.",
+    "As you gain momentum, lift your knees higher and pump your arms in a running motion."
+  ],
+  "stages": [
+    "warm-up",
+    "cardio"
+  ],
+  "purpose": [
+    "cardio",
+    "endurance",
+    "agility"
+  ],
+  "recommendations": {
+    "time_by_round": 60,
+    "relax_by_rep": 0,
+    "by_side": false,
+    "repetitions": 5,
+    "series": 3,
+    "frequency": "2-3 times per week",
+    "period": "1 month"
+  },
+  "resources": {
+    "image": "https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/images/forward_skip.png"
+  },
+  "restrictions": {
+    "age": {},
+    "ailing": {
+      "knee pain": "avoid or modify exercise",
+      "ankle pain": "avoid or modify exercise"
+    }
+  },
+  "comments": [
+    "Make sure to land softly on the balls of your feet to minimize impact on your joints.",
+    "As you become more comfortable with the exercise, you can increase the speed and height of your jumps."
+  ],
+  "variations": [
+  ]
+}

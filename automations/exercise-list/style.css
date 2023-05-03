@@ -12,6 +12,10 @@
   --selected-color: white;
 }
 
+#root {
+  overflow-y: scroll;
+}
+
 body {
   max-width: 100% !important;
   font-family: 'Roboto', sans-serif;
@@ -76,6 +80,7 @@ body {
   display: grid;
   grid-template-columns: repeat(var(--exercises_rows), 1fr);
   font-size: 12px;
+  overflow-x: scroll;
 }
 
 .selected_exercises .cell {
@@ -252,6 +257,10 @@ label[for] {
     background-color: var(--secondary-color);
     color: white;
   }
+
+  .selected_exercises  {
+    display: block;
+  }
 }
 @media print {
   .container {
@@ -260,7 +269,9 @@ label[for] {
   }
 
   .selected_exercises {
+    display: grid;
     width: 100%;
+    overflow: visible;
   }
 
   .selected_exercises .cell {
@@ -268,8 +279,10 @@ label[for] {
   }
 
   .exercises {
-
+    overflow: visible;
   }
+
+
   .notes {
     display: block;
   }
@@ -282,6 +295,11 @@ label[for] {
   .hide_on_print {
     display: none;
   }
+
+  #root {
+    overflow: visible;
+  }
+
 
   @page {
     margin: 1cm;

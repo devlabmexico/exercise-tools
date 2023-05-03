@@ -193,8 +193,15 @@
 
   function PrintOptions ({options, setOptions}) {
     function handleUpdateOption(name, value) {
+      let depending_values = {}
+      if (value === 'portrait' && options.columns == 4) {
+        depending_values["columns"] = 3
+      }
+      console.log(options)
+      console.log(value)
       setOptions({
-          ...options, 
+          ...options,
+          ...depending_values,
           [name]: value
       })
     }
@@ -213,7 +220,7 @@
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-        <option value="4">4</option> 
+        ${ options.orientation == "landscape" ? html`<option value="4">4</option>` :  '' } 
       </select>
       </fieldset><fieldset className="fieldset_remove_decoration">
       <input type="checkbox" id="instructions" 
