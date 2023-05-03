@@ -184,7 +184,7 @@
           ${by_side}
           ${series}
       </header>
-      <button className="finish-routine" onClick=${endAction}>Finish routine</button>
+      <button className="finish-routine" onClick=${endAction}>Stop Early</button>
       <div className="exercise_img">
         <img src=${exercise.exercise.resources.image} />
       </div>
@@ -197,7 +197,7 @@
     </div>
     `
   }
-
+  let audio = new Audio('https://raw.githubusercontent.com/devlabmexico/exercise-tools/master/assets/sounds/bell.mp3');
   const reducer = (state, action) => {
     console.log(action.type)
     switch (action.type) {
@@ -213,11 +213,14 @@
           console.log(exerciseTime)
           if (exerciseTime > 0) {
             let timer = new Timer(() => {
+              /*
               action.dispatch({type: EXERCISE_FINISH})
               action.dispatch({type: EXERCISE_NEXT}) 
               action.dispatch({type: EXERCISE_SETUP, dispatch: action.dispatch})
               action.dispatch({type: EXERCISE_REST_TIME, dispatch: action.dispatch})
-              
+              */
+
+              audio.play();
             }, exerciseTime)
             currentExercise.timer = timer;
           }
